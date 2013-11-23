@@ -22,7 +22,10 @@
         "doctrine/migrations": "1.0.*@dev",
         "doctrine/doctrine-migrations-bundle": "2.1.*@dev",
         "gedmo/doctrine-extensions": "v2.3.8",
-        "friendsofsymfony/user-bundle": "2.0.*@dev"
+        "friendsofsymfony/user-bundle": "2.0.*@dev",
+        "sonata-project/admin-bundle": "2.2.7",
+        "sonata-project/doctrine-orm-admin-bundle": "2.2.*@dev",
+        "sonata-project/block-bundle": "2.2.7"
     },
     "scripts": {
         "post-install-cmd": [
