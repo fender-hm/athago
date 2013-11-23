@@ -9,8 +9,8 @@
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <title>{% block title %}Athago{% endblock %}</title>
         {% block stylesheets %}
-            {% stylesheets 'css/*' %}
-            <link rel="stylesheet" href="{{ asset_url }}" />
+            {% stylesheets "css/*"  output="cache/*.js" %}
+            <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
             {% endstylesheets %}
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
@@ -115,7 +115,7 @@
             </div>
         </div>
         {% block javascripts %}
-            {% javascripts 'js/*' %}
+            {% javascripts "js/*" output="cache/*.js" %}
             <script src="{{ asset_url }}"></script>
             {% endjavascripts %}
         {% endblock %}
