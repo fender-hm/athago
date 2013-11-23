@@ -1,0 +1,330 @@
+@font-face {
+    font-family: 'gothamlight';
+    src: url('../fonts/gotham-light-webfont.eot');
+    src: url('../fonts/gotham-light-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/gotham-light-webfont.woff') format('woff'),
+    url('../fonts/gotham-light-webfont.ttf') format('truetype'),
+    url('../fonts/gotham-light-webfont.svg#gothamlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'gothamlight_italic';
+    src: url('../fonts/gotham-lightitalic-webfont.eot');
+    src: url('../fonts/gotham-lightitalic-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/gotham-lightitalic-webfont.woff') format('woff'),
+    url('../fonts/gotham-lightitalic-webfont.ttf') format('truetype'),
+    url('../fonts/gotham-lightitalic-webfont.svg#gothamlight_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'gothammedium_italic';
+    src: url('../fonts/gotham-mediumitalic-webfont.eot');
+    src: url('../fonts/gotham-mediumitalic-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/gotham-mediumitalic-webfont.woff') format('woff'),
+    url('../fonts/gotham-mediumitalic-webfont.ttf') format('truetype'),
+    url('../fonts/gotham-mediumitalic-webfont.svg#gothammedium_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'gothambold';
+    src: url('../fonts/gotham-bold-webfont.eot');
+    src: url('../fonts/gotham-bold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/gotham-bold-webfont.woff') format('woff'),
+    url('../fonts/gotham-bold-webfont.ttf') format('truetype'),
+    url('../fonts/gotham-bold-webfont.svg#gothambold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'gothambold_italic';
+    src: url('../fonts/gotham-bolditalic-webfont.eot');
+    src: url('../fonts/gotham-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/gotham-bolditalic-webfont.woff') format('woff'),
+    url('../fonts/gotham-bolditalic-webfont.ttf') format('truetype'),
+    url('../fonts/gotham-bolditalic-webfont.svg#gothambold_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'gothambook';
+    src: url('../fonts/gotham-book-webfont.eot');
+    src: url('../fonts/gotham-book-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/gotham-book-webfont.woff') format('woff'),
+    url('../fonts/gotham-book-webfont.ttf') format('truetype'),
+    url('../fonts/gotham-book-webfont.svg#gothambook') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background: url("../images/bg.gif") 50% 50% repeat;
+    font-family: 'gothambook', arial, sans-serif;
+    font-size: 0.75em;
+    line-height: 1.25em;
+    color: #212b6f;
+    letter-spacing: 1px;
+}
+h1, h3 {
+    font-size: 1.5em;
+    line-height: 1.25em;
+    font-weight: normal;
+    margin: 0 0 30px 0;
+    color: #b52d7c;
+    position: relative;
+    letter-spacing: 1px;
+}
+h1:before,
+h3:before {
+    content: "";
+    display: block;
+    float: left;
+    width: 15px;
+    height: 15px;
+    margin: 3px 5px 0 0;
+    background-color: #b52d7c;
+}
+a {
+    color: #b52d7c;
+    text-decoration: none;
+}
+a:hover,
+a:active {
+    text-decoration: none;
+}
+p {
+    line-height: 1.5em;
+    margin: 0 0 20px 0;
+}
+a img,
+img {
+    border: 0;
+}
+.clearfix {
+
+}
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.button {
+    background-color: #b52d7c;
+    padding: 9px 25px;
+    display: inline-block;
+    color: #ffffff;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.button:hover,
+.button:active {
+    background-color: #ac1d70;
+}
+.container {
+    background: #eaecec;
+    background: -moz-linear-gradient(top,  #eaecec 0%, #ffffff 25%, #ffffff 75%, #eaecec 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eaecec), color-stop(25%,#ffffff), color-stop(75%,#ffffff), color-stop(100%,#eaecec));
+    background: -webkit-linear-gradient(top,  #eaecec 0%,#ffffff 25%,#ffffff 75%,#eaecec 100%);
+    background: -o-linear-gradient(top,  #eaecec 0%,#ffffff 25%,#ffffff 75%,#eaecec 100%);
+    background: -ms-linear-gradient(top,  #eaecec 0%,#ffffff 25%,#ffffff 75%,#eaecec 100%);
+    background: linear-gradient(to bottom,  #eaecec 0%,#ffffff 25%,#ffffff 75%,#eaecec 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eaecec', endColorstr='#eaecec',GradientType=0 );
+    width: 960px;
+    margin: 0 auto;
+    -webkit-box-shadow:  0px 0px 10px 0px #dddddd;
+    box-shadow:  0px 0px 10px 0px #dddddd;
+    padding: 27px 20px 0 20px;
+}
+.header {
+    margin-right: 35px;
+    margin-bottom: 20px;
+}
+.header .logo {
+    display: block;
+    background: url("../images/logo.png") 0 0 no-repeat;
+    width: 231px;
+    height: 85px;
+    text-indent: -999px;
+    overflow: hidden;
+    font-size: 0;
+    margin-top: 13px;
+    float: left;
+}
+.header .share {
+    float: right;
+}
+.header .share .button {
+    font-size: 0.83em;
+    line-height: 1.25em;
+    padding: 7px 20px 7px 35px;
+    position: relative;
+    letter-spacing: 0px;
+}
+.header .share .button:before {
+    content: '';
+    display: block;
+    background: url("../images/share-icon.png") 0 0 no-repeat;
+    width: 12px;
+    height: 11px;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    margin-top: -6px;
+}
+.header nav {
+
+}
+.header nav ul {
+    list-style: none;
+    margin: 50px 0 0 0;
+    padding: 0;
+    text-align: right;
+}
+.header nav ul li {
+    display: inline;
+    margin-left: 65px;
+    position: relative;
+}
+.header nav ul li.active:before,
+.header nav ul li:hover:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    margin-top: -8px;
+    left: -25px;
+    background-color: #b52d7c;
+}
+.header nav ul li a {
+    font-size: 1.16em;
+    color: #212b6f;
+}
+.header nav ul li.active a,
+.header nav ul li a:hover {
+    color: #b52d7c;
+}
+#home-slider {
+    width: 960px;
+    height: 325px;
+    position: relative;
+}
+#home-slider .items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#home-slider .items li {
+    width: 960px;
+    height: 325px;
+    float: left;
+}
+#home-slider-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 300px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, .75);
+}
+#home-slider-text .item {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 40px 30px;
+}
+#home-slider-text .item p {
+    font-size: 1.5em;
+    line-height: 36px;
+    letter-spacing: 1px;
+}
+#home-slider-paging {
+    list-style: none;
+    float: right;
+    margin: 15px 15px 0 0;
+    padding: 0;
+}
+#home-slider-paging li {
+    float: left;
+    margin-left: 8px;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    background-color: #ced3d4;
+    overflow: hidden;
+    text-indent: -9999px;
+}
+#home-slider-paging li:hover,
+#home-slider-paging li.active {
+    background-color: #b52d7c;
+}
+.content {
+    padding: 20px;
+}
+.left-side {
+    width: 465px;
+    padding-right: 65px;
+    border-right: 1px solid #f6f7f9;
+    float: left;
+    min-height: 350px
+}
+.right-side {
+    width: 350px;
+    float: right;
+}
+.right-side h3 {
+    margin-left: 10px;
+}
+.media-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.media-list li {
+    float: left;
+    margin: 0 10px 10px 0;
+}
+.media-list li:nth-child(even) {
+    margin-right: 0;
+}
+.media-list li a {
+    display: block;
+    line-height: 0;
+}
+.hover-block {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(181, 45, 124, .85) url("../images/camera-icon.png") 50% 35% no-repeat;
+    color: #ffffff;
+    top: 0;
+    left: 0;
+    text-align: center;
+}
+.hover-block span {
+    position: relative;;
+    top: 70%;
+    display: block;
+}
+.footer {
+    margin: 60px 0;
+    text-align: center;
+}
+.footer p {
+    font-size: 0.83em;
+    line-height: 1.25em;
+    margin-bottom: 15px;
+}
+.footer p.made-in a {
+    color: #ced3d4;
+}
