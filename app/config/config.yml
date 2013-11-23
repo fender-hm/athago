@@ -3,6 +3,7 @@ imports:
     - { resource: security.yml }
 
 framework:
+    translator: ~
     #esi:             ~
     #translator:      { fallback: %locale% }
     secret:          %secret%
@@ -64,3 +65,8 @@ swiftmailer:
     username:  %mailer_user%
     password:  %mailer_password%
     spool:     { type: memory }
+
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: Application\Bundle\UserBundle\Entity\User
