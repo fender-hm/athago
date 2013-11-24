@@ -18,9 +18,13 @@ framework:
         #assets_version: SomeVersionScheme
     default_locale:  "%locale%"
     trusted_proxies: ~
-    session:         ~
     fragments:       ~
     http_method_override: true
+    test: ~
+    session:
+        storage_id: session.storage.filesystem
+
+liip_functional_test: ~
 
 # Twig Configuration
 twig:
@@ -71,3 +75,11 @@ sonata_block:
     blocks:
         sonata.admin.block.admin_list:
             contexts:   [admin]
+
+stof_doctrine_extensions:
+    default_locale: en_US
+    orm:
+        default:
+            tree: true
+            timestampable: true
+            sluggable: true

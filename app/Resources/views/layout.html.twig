@@ -8,6 +8,10 @@
         <meta charset="UTF-8" />
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <title>{% block title %}Athago{% endblock %}</title>
+        {% set _meta_keywords = block('meta_keywords') %}
+        {% set _meta_description = block('meta_description') %}
+        {% if _meta_keywords is not empty %}<meta name="keyword" content="{{ _meta_keywords }}">{% endif %}
+        {% if _meta_description is not empty %}<meta name="description" content="{{ _meta_description }}">{% endif %}
         {% block stylesheets %}
             {% stylesheets "css/*"  output="cache/*.css" filter="cssrewrite" %}
             <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
@@ -18,17 +22,17 @@
     <body>
         <div class="container clearfix">
             <div class="header clearfix">
-                <a href="#" class="logo" title="Athago">Athago</a>
+                <a href="{{ path('homepage') }}" class="logo" title="Athago">Athago</a>
                 <div class="share">
                     <a href="#" class="button">Deel onze site met anderen</a>
                 </div>
                 <nav class="clearfix">
                     <ul class="menu">
                         <li class="active">
-                            <a href="#">Home</a>
+                            <a href="{{ path('homepage') }}">Home</a>
                         </li>
                         <li>
-                            <a href="#">Over ons</a>
+                            <a href="{{ path('over-ons-page') }}">Over ons</a>
                         </li>
                         <li>
                             <a href="#">Realisaties</a>
@@ -82,32 +86,36 @@
                 <ul id="home-slider-paging"></ul>
             </div>
             <div class="content clearfix">
-                <div class="left-side">
-                    <h1>Welkom</h1>
-                    <p>ATHAGO nv is een betrouwbaar, dynamisch en kwaliteitsgericht bouwbedrijf.</p>
-                    <p>Ieder bouwproject wordt van start tot oplevering nauwgezet opgevolgd en constant wordt gestreefd naar het juiste evenwicht tussen kwaliteit, duurzaamheid, esthetiek en kostprijs.</p>
-                    <p>Wij nodigen u graag uit onze website te ontdekken om ons bedrijf beter te leren kennen.</p>
-                </div>
-                <div class="right-side">
-                    <h3>Te koop</h3>
-                    <ul class="media-list clearfix">
-                        <li>
-                            <a href="#" class="hover-effect">
-                                <img src="{{ asset('images/te-koop-thumb.jpg') }}" alt="">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="hover-effect">
-                                <img src="{{ asset('images/te-koop-thumb.jpg') }}" alt="">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="hover-effect">
-                                <img src="{{ asset('images/te-koop-thumb.jpg') }}" alt="">
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                {% block content %}
+                    <div class="left-side">
+                        <h1>Welkom</h1>
+                        <p>ATHAGO nv is een betrouwbaar, dynamisch en kwaliteitsgericht bouwbedrijf.</p>
+                        <p>Ieder bouwproject wordt van start tot oplevering nauwgezet opgevolgd en constant wordt gestreefd naar het juiste evenwicht tussen kwaliteit, duurzaamheid, esthetiek en kostprijs.</p>
+                        <p>Wij nodigen u graag uit onze website te ontdekken om ons bedrijf beter te leren kennen.</p>
+                    </div>
+                {% endblock %}
+                {% block rightside %}
+                    <div class="right-side">
+                        <h3>Te koop</h3>
+                        <ul class="media-list clearfix">
+                            <li>
+                                <a href="#" class="hover-effect">
+                                    <img src="{{ asset('images/te-koop-thumb.jpg') }}" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover-effect">
+                                    <img src="{{ asset('images/te-koop-thumb.jpg') }}" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover-effect">
+                                    <img src="{{ asset('images/te-koop-thumb.jpg') }}" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                {% endblock %}
             </div>
             <div class="footer">
                 <p>ATHAGO NV | Kwikaard 110 | 2980 Sint-Antonius Zoersel | tel. 03-383.07.86 | fax 03-384.08.41 | <a href="mail:info@athago.be">info@athago.be</a></p>
