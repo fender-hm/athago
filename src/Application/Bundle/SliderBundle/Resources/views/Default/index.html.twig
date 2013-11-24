@@ -1,0 +1,17 @@
+<div id="home-slider" class="slider-{{ slider.id }}">
+    <ul class="items clearfix">
+        {% for slide in slider.slides %}
+        <li>
+            <img src="{{ vich_uploader_asset(slide, 'image') | imagine_filter('slide') }}" alt="">
+        </li>
+        {% endfor %}
+    </ul>
+    <div id="home-slider-text">
+        {% for slide in slider.slides %}
+        <div class="item">
+            {{ slide.content|raw }}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<ul id="home-slider-paging"></ul>

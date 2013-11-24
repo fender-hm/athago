@@ -192,8 +192,7 @@ img {
     margin-left: 65px;
     position: relative;
 }
-.header nav ul li.active:before,
-.header nav ul li:hover:before {
+.header nav ul li.active:before {
     content: "";
     display: block;
     position: absolute;
@@ -247,6 +246,13 @@ img {
     font-size: 1.5em;
     line-height: 36px;
     letter-spacing: 1px;
+}
+#home-slider-text .item p a.button {
+    font-size: 0.66em;
+    line-height: 1.25em;
+}
+.slider-2 #home-slider-text {
+    display: none;
 }
 #home-slider-paging {
     list-style: none;

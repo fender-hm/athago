@@ -82,3 +82,22 @@ stof_doctrine_extensions:
             timestampable: true
             sluggable: true
             uploadable: false
+
+vich_uploader:
+    db_driver: orm
+    mappings:
+        slide_image:
+            uri_prefix: /images/slides
+            upload_destination: %kernel.root_dir%/../web/images/slides
+            namer: vich_uploader.namer_uniqid
+
+liip_imagine:
+    filter_sets:
+        slide:
+            quality: 75
+            filters:
+                thumbnail: { size: [960, 325], mode: outbound }
+        slide_admin:
+            quality: 75
+            filters:
+                thumbnail: { size: [150, 50], mode: outbound }

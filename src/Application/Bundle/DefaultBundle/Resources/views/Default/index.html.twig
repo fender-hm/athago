@@ -6,3 +6,7 @@
         {{ page.content|raw }}
     </div>
 {% endblock %}
+
+{% block slider %}
+    {{ render(controller("ApplicationSliderBundle:Default:index", {'id': 1})) }}
+{% endblock %}
