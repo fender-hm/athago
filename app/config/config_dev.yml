@@ -27,5 +27,7 @@ monolog:
 assetic:
     use_controller: true
 
+liip_functional_test: ~
+
 #swiftmailer:
 #    delivery_address: me@example.com
