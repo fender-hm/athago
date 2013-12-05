@@ -22,6 +22,7 @@ class PageAdmin extends Admin
             ->with('General')
             ->add('title')
             ->add('slug', null, array('required' => false))
+            ->add('homepage', null, array('required' => false))
             ->add('updated', 'date', array('widget' => 'single_text', 'required' => false))
             ->add('created', 'date', array('widget' => 'single_text', 'required' => false))
             ->end()
@@ -42,8 +43,7 @@ class PageAdmin extends Admin
         $listMapper
             ->addIdentifier('title')
             ->add('slug')
-            ->add('updated')
-            ->add('created')
+            ->add('homepage')
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'edit' => array(),

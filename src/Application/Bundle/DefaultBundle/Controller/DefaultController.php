@@ -23,7 +23,7 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        $page = $this->getDoctrine()->getRepository('ApplicationDefaultBundle:Page')->findOneBy(array('slug' => 'welcome'));
+        $page = $this->getDoctrine()->getRepository('ApplicationDefaultBundle:Page')->findOneBy(array('homepage' => true));
         if (empty($page)) {
             throw new NotFoundHttpException('Page not found');
         }

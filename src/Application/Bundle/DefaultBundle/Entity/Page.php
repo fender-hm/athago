@@ -60,6 +60,29 @@ class Page
     private $updated;
 
     /**
+     * @param boolean $homepage
+     */
+    public function setHomepage($homepage)
+    {
+        $this->homepage = $homepage;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function getHomepage()
+    {
+        return $this->homepage;
+    }
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(type="boolean")
+     */
+    private $homepage = false;
+
+    /**
      * @param mixed $id
      */
     public function setId($id)
