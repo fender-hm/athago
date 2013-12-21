@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="application.realistate.realistate.class">Application\Bundle\RealistateBundle\Entity\Realistate</parameter>
+        <parameter key="application.realistate.realistate.controller">ApplicationRealistateBundle:RealistateAdmin</parameter>
+    </parameters>
+
+    <services>
+        <service id="application.realistate.realistate.admin" class="Application\Bundle\RealistateBundle\Admin\RealistateAdmin">
+            <tag name="sonata.admin" manager_type="orm" group="Realistate" label="Realistate"/>
+            <argument />
+            <argument>%application.realistate.realistate.class%</argument>
+            <argument>%application.realistate.realistate.controller%</argument>
+
+            <call method="setEntityManager">
+                <argument type='service' id='doctrine.orm.entity_manager' />
+            </call>
+        </service>
+
+        <service id="realistate.tmp_listener.request" class="Application\Bundle\RealistateBundle\Listener\TmpListener">
+            <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest" />
+            <argument type="service" id="security.context"/>
+        </service>
+
+        <service id="realistate.tmp_listener.response" class="Application\Bundle\RealistateBundle\Listener\TmpListener">
+            <tag name="kernel.event_listener" event="kernel.response" method="onKernelResponse" />
+            <argument type="service" id="security.context"/>
+        </service>
+    </services>
+</container>

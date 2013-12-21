@@ -90,6 +90,10 @@ vich_uploader:
             uri_prefix: /images/slides
             upload_destination: %kernel.root_dir%/../web/images/slides
             namer: vich_uploader.namer_uniqid
+        realistate_image:
+            uri_prefix: /images/realistate
+            upload_destination: %kernel.root_dir%/../web/images/realistate
+            namer: vich_uploader.namer_uniqid
 
 liip_imagine:
     filter_sets:
@@ -97,7 +101,15 @@ liip_imagine:
             quality: 75
             filters:
                 thumbnail: { size: [960, 325], mode: outbound }
-        slide_admin:
+        realistate_thumb:
             quality: 75
             filters:
-                thumbnail: { size: [150, 50], mode: outbound }
+                thumbnail: { size: [282, 169], mode: outbound }
+        realistate_admin_thumb:
+            quality: 75
+            filters:
+                thumbnail: { size: [150, 100], mode: outbound }
+        realistate_big:
+            quality: 75
+            filters:
+                thumbnail: { size: [800, 600], mode: outbound }

@@ -14,6 +14,10 @@
             <argument>%application.default.page.class%</argument>
             <argument />
         </service>
+
+        <service id="application.default.image_preview.type" class="Application\Bundle\DefaultBundle\Type\ImagePreviewType">
+            <tag name="form.type" alias="image_preview" />
+        </service>
     </services>
 
 </container>
