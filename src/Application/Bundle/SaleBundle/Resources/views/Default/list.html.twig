@@ -1,0 +1,23 @@
+{% extends '::layout.html.twig' %}
+
+{% block main_content %}
+    <h1>Te koop</h1>
+    <ul class="realistate for-sale clearfix">
+        {% set index = 1 %}
+        {% for item in items %}
+            <li class="{{ index == 1?'left-item':index == 3?'right-item':'' }}">
+                <a href="#" title="{{ item.title }}">
+                    <img src="{{ asset('images/sale/' ~ item.images.first.imageName ) | imagine_filter('realistate_thumb')  }}" alt="" />
+                    {{ item.title }}
+                </a>
+                <p>{{ item.fullTitle }}</p>
+            </li>
+            {% if index == 3 %}
+                {% set index = 1 %}
+            {% else %}
+                {% set index = index + 1 %}
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% endblock %}
+

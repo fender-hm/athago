@@ -1,0 +1,138 @@
+{% block logo_preview_widget %}
+    {% spaceless %}
+        {% set subject =  form.vars.sonata_admin.admin.getSubject %}
+        {% set type = type|default('file') %}
+        <a href="javascript:void(0);" {{ block('widget_attributes') }}>Upload</a>
+        <div class="logo-image">
+            {% if subject.id and subject.logoName %}
+                <div class="image">
+                    <img src="{{ asset('images/sale/companies/' ~ subject.logoName) | imagine_filter('sale_company_admin_thumb') }}" />
+                </div>
+            {% endif %}
+        </div>
+
+        <input type="hidden" id="edited-item" value="{{ subject.id }}">
+        <script src="{{ asset('js/fileuploader.js') }}" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(document).ready(function()
+            {
+                var uploader = new qq.FileUploaderBasic({
+                    action: '{{ path('sonata_admin_sale_logo_upload') }}',
+                    params: {
+                        id: $('#edited-item').val()
+                    },
+                    button: $('a.uploader')[0],
+                    forceMultipart: true,
+                    multiple: false,
+                    allowedExtensions: ['jpg', 'jpeg', 'png'],
+                    acceptFiles: 'image/jpeg,image/png',
+                    sizeLimit: 6 * 1024 * 1024,
+                    onComplete: function (id, fileName, responseJSON) {
+                        $('.logo-image').html($('<div class="image"><img src="' + responseJSON.thumb + '" /></div>'));
+                    },
+                    onUpload: function (id, fileName) {
+
+                    },
+                    onProgress: function (id, fileName, uploadedBytes, totalBytes) {
+
+                    }
+                });
+            })
+        </script>
+        <style type="text/css">
+            .uploaded-images, .logo-image {
+                overflow: hidden;
+            }
+            .uploaded-images .image,
+            .logo-image .image {
+                float: left;
+                text-align: center;
+            }
+            .uploaded-images .image img,
+            .logo-image .image img {
+                margin: 5px;
+            }
+            .uploaded-images .image .remove {
+                display: block;
+                cursor: pointer;
+                text-decoration: underline;
+                color: #ff0000;
+            }
+        </style>
+    {% endspaceless %}
+{% endblock %}
+
+{% block sale_image_preview_widget %}
+    {% spaceless %}
+        {% set subject =  form.vars.sonata_admin.admin.getSubject %}
+        {% set type = type|default('file') %}
+        <a href="javascript:void(0);" {{ block('widget_attributes') }}>Upload</a>
+        <div class="uploaded-images">
+            {% if subject.id and subject.images %}
+                {% for image in subject.images %}
+                    <div class="image">
+                        <img src="{{ asset('images/sale/' ~ image.imageName) | imagine_filter('realistate_admin_thumb') }}" />
+                        <span class="remove" data-id="{{ image.id }}">Remove</span>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+
+        <input type="hidden" id="edited-item" value="{{ subject.id }}">
+        <script src="{{ asset('js/fileuploader.js') }}" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(document).ready(function()
+            {
+                var uploader = new qq.FileUploaderBasic({
+                    action: '{{ path('sonata_admin_sale_image_upload') }}',
+                    params: {
+                        id: $('#edited-item').val()
+                    },
+                    button: $('a.uploader')[0],
+                    forceMultipart: true,
+                    multiple: false,
+                    allowedExtensions: ['jpg', 'jpeg', 'png'],
+                    acceptFiles: 'image/jpeg,image/png',
+                    sizeLimit: 6 * 1024 * 1024,
+                    onComplete: function (id, fileName, responseJSON) {
+                        $('.uploaded-images').append($('<div class="image"><img src="' + responseJSON.thumb + '" /><span class="remove" data-id="' + responseJSON.id + '">Remove</span></div>'));
+                    },
+                    onUpload: function (id, fileName) {
+
+                    },
+                    onProgress: function (id, fileName, uploadedBytes, totalBytes) {
+
+                    }
+                });
+                $(document).on('click', '.remove', function()
+                {
+                    var $imageItem = $(this).closest('.image');
+                    $.ajax({'url': '/admin/sale/removeImage/' + $(this).data('id')}).done(function(data)
+                    {
+                        $imageItem.remove();
+                    })
+                });
+            })
+        </script>
+        <style type="text/css">
+            .uploaded-images, .logo-image {
+                overflow: hidden;
+            }
+            .uploaded-images .image,
+            .logo-image .image {
+                float: left;
+                text-align: center;
+            }
+            .uploaded-images .image img,
+            .logo-image .image img {
+                margin: 5px;
+            }
+            .uploaded-images .image .remove {
+                display: block;
+                cursor: pointer;
+                text-decoration: underline;
+                color: #ff0000;
+            }
+        </style>
+    {% endspaceless %}
+{% endblock %}

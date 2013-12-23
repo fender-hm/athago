@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="application.sale.sale.class">Application\Bundle\SaleBundle\Entity\Sale</parameter>
+        <parameter key="application.sale.sale_company.class">Application\Bundle\SaleBundle\Entity\SaleCompany</parameter>
+        <parameter key="application.sale.sale.controller">ApplicationSaleBundle:SaleAdmin</parameter>
+    </parameters>
+
+    <services>
+        <service id="application.sale.sale.admin" class="Application\Bundle\SaleBundle\Admin\SaleAdmin">
+            <tag name="sonata.admin" manager_type="orm" group="For Sale" label="Sale"/>
+            <argument />
+            <argument>%application.sale.sale.class%</argument>
+            <argument>%application.sale.sale.controller%</argument>
+        </service>
+
+        <service id="application.sale.sale_company.admin" class="Application\Bundle\SaleBundle\Admin\SaleCompanyAdmin">
+            <tag name="sonata.admin" manager_type="orm" group="For Sale" label="Company"/>
+            <argument />
+            <argument>%application.sale.sale_company.class%</argument>
+            <argument>%application.sale.sale.controller%</argument>
+        </service>
+
+        <service id="application.sale.logo_preview.type" class="Application\Bundle\SaleBundle\Type\LogoPreviewType">
+            <tag name="form.type" alias="logo_preview" />
+        </service>
+
+        <service id="application.sale.sale_image_preview.type" class="Application\Bundle\SaleBundle\Type\SaleImagePreviewType">
+            <tag name="form.type" alias="sale_image_preview" />
+        </service>
+    </services>
+</container>

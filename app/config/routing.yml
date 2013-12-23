@@ -8,6 +8,11 @@ application_realistate:
     type:     annotation
     prefix:   /
 
+application_sale:
+    resource: "@ApplicationSaleBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
 

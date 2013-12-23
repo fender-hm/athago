@@ -45,4 +45,19 @@
         <default key="_controller">ApplicationRealistateBundle:RealistateAdmin:removeImage</default>
         <default key="_sonata_admin">application.realistate.realistate.admin</default>
     </route>
+
+    <route id="sonata_admin_sale_logo_upload" pattern="/sale/logo/upload">
+        <default key="_controller">ApplicationSaleBundle:SaleAdmin:uploadLogo</default>
+        <default key="_sonata_admin">application.sale.sale_company.admin</default>
+    </route>
+
+    <route id="sonata_admin_sale_image_upload" pattern="/sale/images/upload">
+        <default key="_controller">ApplicationSaleBundle:SaleAdmin:upload</default>
+        <default key="_sonata_admin">application.sale.sale.admin</default>
+    </route>
+
+    <route id="sonata_admin_sale_image_remove" pattern="/sale/removeImage/{id}">
+        <default key="_controller">ApplicationSaleBundle:SaleAdmin:removeImage</default>
+        <default key="_sonata_admin">application.sale.sale.admin</default>
+    </route>
 </routes>

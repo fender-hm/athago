@@ -37,8 +37,8 @@
                         <li{{ app.request.get('_route') == 'realistate'?' class="active"':'' }}>
                             <a href="{{ path('realistate') }}">Realisaties</a>
                         </li>
-                        <li>
-                            <a href="#">Te koop</a>
+                        <li{{ app.request.get('_route') == 'sale_list'?' class="active"':'' }}>
+                            <a href="{{ path('sale_list') }}">Te koop</a>
                         </li>
                         <li>
                             <a href="#">Contact</a>

@@ -33,6 +33,7 @@ class AppKernel extends Kernel
             new Vich\UploaderBundle\VichUploaderBundle(),
             new Liip\ImagineBundle\LiipImagineBundle(),
             new Application\Bundle\RealistateBundle\ApplicationRealistateBundle(),
+            new Application\Bundle\SaleBundle\ApplicationSaleBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

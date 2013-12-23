@@ -341,6 +341,22 @@ ul.realistate li a {
     display: block;
     line-height: 0;
 }
+ul.for-sale {
+    margin-top: -18px;
+}
+ul.for-sale li {
+    text-align: center;
+}
+ul.for-sale li a {
+    font-size: 1.25em;
+    line-height: 1.75em;
+}
+ul.for-sale li a:hover {
+    text-decoration: underline;
+}
+ul.for-sale li a img {
+    display: block;
+}
 .footer {
     margin: 60px 0;
     text-align: center;
