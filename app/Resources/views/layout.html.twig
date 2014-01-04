@@ -37,7 +37,7 @@
                         <li{{ app.request.get('_route') == 'realistate'?' class="active"':'' }}>
                             <a href="{{ path('realistate') }}">Realisaties</a>
                         </li>
-                        <li{{ app.request.get('_route') == 'sale_list'?' class="active"':'' }}>
+                        <li{{ app.request.get('_route') == 'sale_list' or app.request.get('_route') == 'sale_show'?' class="active"':'' }}>
                             <a href="{{ path('sale_list') }}">Te koop</a>
                         </li>
                         <li>
@@ -58,24 +58,7 @@
                     </div>
                     <div class="right-side">
                         {% block rightside %}
-                            <h3>Te koop</h3>
-                            <ul class="media-list clearfix">
-                                <li>
-                                    <a href="#" class="hover-effect" data-hover-text="Meer informatie">
-                                        <img src="{{ asset('images/te-koop-thumb.jpg') }}" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="hover-effect" data-hover-text="Meer informatie">
-                                        <img src="{{ asset('images/te-koop-thumb.jpg') }}" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="hover-effect" data-hover-text="Meer informatie">
-                                        <img src="{{ asset('images/te-koop-thumb.jpg') }}" alt="">
-                                    </a>
-                                </li>
-                            </ul>
+
                         {% endblock %}
                     </div>
                 {% endblock %}

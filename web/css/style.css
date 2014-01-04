@@ -87,6 +87,13 @@ h3:before {
     margin: 3px 5px 0 0;
     background-color: #b52d7c;
 }
+h4 {
+    font-family: 'gothambold', arial, sans-serif;
+    font-size: 1em;
+    font-weight: normal;
+    margin: 0 0 20px 0;
+    letter-spacing: 1px;
+}
 a {
     color: #b52d7c;
     text-decoration: none;
@@ -157,17 +164,17 @@ img {
     margin-top: 13px;
     float: left;
 }
-.header .share {
+.share {
     float: right;
 }
-.header .share .button {
+.share .button {
     font-size: 0.83em;
     line-height: 1.25em;
     padding: 7px 20px 7px 35px;
     position: relative;
     letter-spacing: 0px;
 }
-.header .share .button:before {
+.share .button:before {
     content: '';
     display: block;
     background: url("../images/share-icon.png") 0 0 no-repeat;
@@ -356,6 +363,66 @@ ul.for-sale li a:hover {
 }
 ul.for-sale li a img {
     display: block;
+}
+
+.media-gallery .big-img {
+    float:left;
+    width: 540px;
+    height: 324px;
+    margin-right: 15px;
+}
+.media-gallery .thumbs {
+    list-style: none;
+    float:left;
+    width:365px;
+    margin: 0;
+    padding: 0;
+}
+.media-gallery .thumbs li {
+    margin: 0 0 10px 10px;
+    float:left;
+    line-height: 0;
+}
+.media-gallery .thumbs li img {
+    cursor: pointer;
+}
+.for-sale-description, .companies {
+    padding: 25px;
+}
+.companies-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.companies-list li {
+    float: left;
+    width: 420px;
+    margin-right: 15px;
+}
+.company-logo {
+    float: right;
+    width:50%;
+    text-align: center;
+}
+.company-address {
+    float: left;
+    width: 50%;
+}
+.company-address p {
+    margin: 0;
+}
+.for-sale-nav {
+    margin-top: 20px;
+}
+.for-sale-nav .prev,
+.for-sale-nav .next {
+    float:left;
+    width:40%;
+    text-align: right;
+}
+.for-sale-nav .next {
+    float: right;
+    text-align: left;
 }
 .footer {
     margin: 60px 0;

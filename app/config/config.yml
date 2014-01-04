@@ -117,3 +117,15 @@ liip_imagine:
             quality: 75
             filters:
                 thumbnail: { size: [100, 100], mode: outbound }
+        sale_big_img:
+            quality: 75
+            filters:
+                thumbnail: { size: [540, 324], mode: outbound }
+        sale_small_img:
+            quality: 75
+            filters:
+                thumbnail: { size: [169, 102], mode: outbound }
+        sale_company_logo:
+            quality: 75
+            filters:
+                thumbnail: { size: [130, 95], mode: inset }

@@ -8,3 +8,7 @@
 {% block slider %}
     {{ render(controller("ApplicationSliderBundle:Default:index", {'id': 1})) }}
 {% endblock %}
+
+{% block rightside %}
+    {{ render(controller('ApplicationSaleBundle:Default:widget')) }}
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends '::layout.html.twig' %}
+
+{% block main_content %}
+    <h1>Te koop: {{ item.title }}</h1>
+    {% if item.images|length %}
+        <div class="media-gallery clearfix">
+            <div class="big-img">
+                <img src="{{ asset('images/sale/' ~ item.images.first.imageName ) | imagine_filter('sale_big_img') }}" alt="">
+            </div>
+            <ul class="thumbs clearfix">
+                {% for image in item.images %}
+                    <li>
+                        <img src="{{ asset('images/sale/' ~ image.imageName ) | imagine_filter('sale_small_img') }}"
+                             alt=""
+                             data-src="{{ asset('images/sale/' ~ image.imageName ) | imagine_filter('sale_big_img') }}">
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+    <div class="for-sale-description">
+        <div class="share">
+            <a href="#" class="button">Deel onze site met anderen</a>
+        </div>
+        {{ item.description | raw }}
+    </div>
+    <div class="companies">
+        <h4>Contacteer voor meer info en verkoop</h4>
+        {% if item.companies|length %}
+            <ul class="companies-list clearfix">
+                {% for company in item.companies %}
+                    <li class="clearfix">
+                        <div class="company-logo">
+                            <img src="{{ asset('images/sale/companies/' ~ company.logoName ) | imagine_filter('sale_company_logo') }}" alt="">
+                        </div>
+                        <div class="company-address">
+                            <p>{{ company.title }}</p>
+                            {{ company.description|raw }}
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+    {{ render(controller('ApplicationSaleBundle:Default:getNavigation', {'id':item.id})) }}
+{% endblock %}
