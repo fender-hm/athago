@@ -196,7 +196,7 @@ img {
 }
 .header nav ul li {
     display: inline;
-    margin-left: 65px;
+    margin-left: 62px;
     position: relative;
 }
 .header nav ul li.active:before {
