@@ -40,8 +40,8 @@
                         <li{{ app.request.get('_route') == 'sale_list' or app.request.get('_route') == 'sale_show'?' class="active"':'' }}>
                             <a href="{{ path('sale_list') }}">Te koop</a>
                         </li>
-                        <li>
-                            <a href="#">Contact</a>
+                        <li{{ app.request.get('_route') == 'contact'?' class="active"':'' }}>
+                            <a href="{{ path('contact-page') }}">Contact</a>
                         </li>
                     </ul>
                 </nav>

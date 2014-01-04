@@ -49,4 +49,23 @@ class DefaultController extends Controller
 
         return array('page' => $page);
     }
+
+    /**
+     * Contact action
+     *
+     * @return array
+     * @throws NotFoundHttpException
+     *
+     * @Route("/contact", name="contact-page")
+     * @Template()
+     */
+    public function contactAction()
+    {
+        $page = $this->getDoctrine()->getRepository('ApplicationDefaultBundle:Page')->findOneBy(array('slug' => 'contact'));
+        if (empty($page)) {
+            throw new NotFoundHttpException('Page not found');
+        }
+
+        return array('page' => $page);
+    }
 }
