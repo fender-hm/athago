@@ -24,7 +24,7 @@
             <div class="header clearfix">
                 <a href="{{ path('homepage') }}" class="logo" title="Athago">Athago</a>
                 <div class="share">
-                    <a href="#" class="button">Deel onze site met anderen</a>
+                    <a href="http://www.addthis.com/bookmark.php" class="addthis_button button">Deel onze site met anderen</a>
                 </div>
                 <nav class="clearfix">
                     <ul class="menu">
@@ -76,6 +76,7 @@
             output="cache/*.js" %}
             <script src="{{ asset_url }}"></script>
             {% endjavascripts %}
+            <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid="></script>
         {% endblock %}
     </body>
 </html>
