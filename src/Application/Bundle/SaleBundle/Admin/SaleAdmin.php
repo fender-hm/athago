@@ -22,6 +22,9 @@ class saleAdmin extends Admin
         $formMapper
             ->add('title')
             ->add('fullTitle')
+            ->add('shortDescription', 'textarea', array(
+                'required' => false
+            ))
             ->add('description', 'textarea', array(
                 'required' => false,
                 'attr' => array('class' => 'tinymce', 'data-theme' => 'advanced')

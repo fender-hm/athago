@@ -178,4 +178,11 @@ class Page
         return $this->updated;
     }
 
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getTitle();
+    }
 }

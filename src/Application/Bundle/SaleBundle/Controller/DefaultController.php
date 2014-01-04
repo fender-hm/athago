@@ -47,10 +47,9 @@ class DefaultController extends Controller
      */
     public function getNavigationAction($id)
     {
-        $prevItem = $this->getDoctrine()->getRepository('ApplicationSaleBundle:Sale')->findPrevSale($id);
         $nextItem = $this->getDoctrine()->getRepository('ApplicationSaleBundle:Sale')->findNextSale($id);
 
-        return array('prev' => $prevItem, 'next' => $nextItem);
+        return array('next' => $nextItem);
     }
 
     /**

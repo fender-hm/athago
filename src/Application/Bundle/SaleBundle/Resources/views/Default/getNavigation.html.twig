@@ -1,10 +1,6 @@
-{% if prev or next %}
 <div class="for-sale-nav clearfix">
-    {% if prev %}
-        <a href="{{ url('sale_show', {'id':prev.id}) }}" class="prev">< Terug naar overzicht</a>
-    {% endif %}
+    <a href="{{ url('sale_list') }}" class="prev">< Terug naar overzicht</a>
     {% if next %}
         <a href="{{ url('sale_show', {'id':next.id}) }}" class="next">Volgend pand ></a>
     {% endif %}
 </div>
-{% endif %}

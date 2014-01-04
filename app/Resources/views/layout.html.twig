@@ -24,7 +24,7 @@
             <div class="header clearfix">
                 <a href="{{ path('homepage') }}" class="logo" title="Athago">Athago</a>
                 <div class="share">
-                    <a href="http://www.addthis.com/bookmark.php" class="addthis_button button">Deel onze site met anderen</a>
+                    <a href="http://www.addthis.com/bookmark.php" class="addthis_button button" addthis:url="{{ url('homepage') }}">Deel onze site met anderen</a>
                 </div>
                 <nav class="clearfix">
                     <ul class="menu">
@@ -64,7 +64,7 @@
                 {% endblock %}
             </div>
             <div class="footer">
-                <p>ATHAGO NV | Kwikaard 110 | 2980 Sint-Antonius Zoersel | tel. 03-383.07.86 | fax 03-384.08.41 | <a href="mail:info@athago.be">info@athago.be</a></p>
+                <p>ATHAGO NV | Kwikaard 110 | 2980 Sint-Antonius Zoersel | tel. 03-383.07.86 | fax 03-384.08.41 | <a href="mailto:info@athago.be">info@athago.be</a></p>
                 <p class="made-in"><a href="http://www.beeldstudio.be" target="_blank" title="website: BeeldStudio Creatives">website: BeeldStudio Creatives</a></p>
             </div>
         </div>

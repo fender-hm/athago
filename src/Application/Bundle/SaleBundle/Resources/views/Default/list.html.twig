@@ -10,7 +10,7 @@
                     <img src="{{ asset('images/sale/' ~ item.images.first.imageName ) | imagine_filter('realistate_thumb')  }}" alt="" />
                     {{ item.title }}
                 </a>
-                <p>{{ item.fullTitle }}</p>
+                <p>{{ item.shortDescription }}</p>
             </li>
             {% if index == 3 %}
                 {% set index = 1 %}

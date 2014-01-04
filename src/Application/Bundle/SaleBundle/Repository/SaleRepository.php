@@ -6,25 +6,6 @@ use Doctrine\ORM\EntityRepository;
 class SaleRepository extends EntityRepository
 {
     /**
-     * Find prev sale by id
-     * @param int $id
-     *
-     * @return mixed
-     */
-    public function findPrevSale($id)
-    {
-        $qb = $this->createQueryBuilder('s')
-            ->where('s.id < :itemId')
-            ->orderBy('s.id', 'DESC')
-            ->setMaxResults(1)
-            ->setParameter('itemId', $id);
-
-        $result = $qb->getQuery()->getResult();
-
-        return empty($result)?null:reset($result);
-    }
-
-    /**
      * Find next sale by id
      * @param int $id
      *

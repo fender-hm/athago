@@ -11,7 +11,7 @@
 
     <services>
         <service id="application.realistate.realistate.admin" class="Application\Bundle\RealistateBundle\Admin\RealistateAdmin">
-            <tag name="sonata.admin" manager_type="orm" group="Realistate" label="Realistate"/>
+            <tag name="sonata.admin" manager_type="orm" group="Realisatie" label="Realisatie"/>
             <argument />
             <argument>%application.realistate.realistate.class%</argument>
             <argument>%application.realistate.realistate.controller%</argument>

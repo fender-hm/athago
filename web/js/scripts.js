@@ -61,7 +61,7 @@ $(document).ready(function () {
     var $mediaGallery = $('.media-gallery');
     var $bigImg = $mediaGallery.find('.big-img img');
     if ($mediaGallery.length) {
-        $mediaGallery.find('.thumbs img').click(function (e) {
+        $mediaGallery.find('.thumbs img').mouseover(function (e) {
             e.preventDefault();
             $bigImg.attr('src', $(this).data('src'));
         });

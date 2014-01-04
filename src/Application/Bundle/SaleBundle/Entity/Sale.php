@@ -45,6 +45,12 @@ class Sale
     private $description;
 
     /**
+     * @var string
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $shortDescription;
+
+    /**
      * @var ArrayCollection
      * @ORM\ManyToMany(targetEntity="SaleCompany")
      * @ORM\JoinTable(name="sale_companies",
@@ -191,5 +197,29 @@ class Sale
     public function removeCompany(SaleCompany $company)
     {
         $this->companies->removeElement($company);
+    }
+
+    /**
+     * @param string $shortDescription
+     */
+    public function setShortDescription($shortDescription)
+    {
+        $this->shortDescription = $shortDescription;
+    }
+
+    /**
+     * @return string
+     */
+    public function getShortDescription()
+    {
+        return $this->shortDescription;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getTitle();
     }
 }

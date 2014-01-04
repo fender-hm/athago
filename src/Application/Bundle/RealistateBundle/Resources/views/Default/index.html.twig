@@ -5,7 +5,7 @@
         {% set index = 1 %}
         {% for realistate in realistates %}
             <li class="{{ index == 1?'left-item':index == 3?'right-item':'' }}">
-                <a href="{{ asset('images/realistate/' ~ realistate.images.first.imageName ) | imagine_filter('realistate_big')  }}" class="fancybox hover-effect" rel="gallery{{ realistate.id }}" data-hover-text="Vergroot de wergave" title="{{ realistate.title }}">
+                <a href="{{ asset('images/realistate/' ~ realistate.images.first.imageName ) | imagine_filter('realistate_big')  }}" class="fancybox hover-effect" rel="gallery{{ realistate.id }}" data-hover-text="Vergroot de weergave" title="{{ realistate.title }}">
                     <img src="{{ asset('images/realistate/' ~ realistate.images.first.imageName ) | imagine_filter('realistate_thumb')  }}" alt="" />
                 </a>
                 <div style="display: none">

@@ -100,7 +100,7 @@ a {
 }
 a:hover,
 a:active {
-    text-decoration: none;
+    text-decoration: underline;
 }
 p {
     line-height: 1.5em;
@@ -133,6 +133,7 @@ img {
 .button:hover,
 .button:active {
     background-color: #ac1d70;
+    text-decoration: none;
 }
 .container {
     background: #eaecec;
@@ -217,6 +218,7 @@ img {
 .header nav ul li.active a,
 .header nav ul li a:hover {
     color: #b52d7c;
+    text-decoration: none
 }
 #home-slider {
     width: 960px;
@@ -337,6 +339,7 @@ ul.realistate {
 ul.realistate li {
     float: left;
     margin: 18px;
+    width:282px;
 }
 ul.realistate li.left-item {
     margin-left: 0;
@@ -353,6 +356,9 @@ ul.for-sale {
 }
 ul.for-sale li {
     text-align: center;
+    width: 290px;
+    overflow: hidden;
+    margin: 12px;
 }
 ul.for-sale li a {
     font-size: 1.25em;
@@ -363,8 +369,12 @@ ul.for-sale li a:hover {
 }
 ul.for-sale li a img {
     display: block;
+    margin: 0 auto;
+    border: 4px solid #ffffff;
 }
-
+ul.for-sale li a:hover img {
+    border: 4px solid #b52d7c;
+}
 .media-gallery .big-img {
     float:left;
     width: 540px;
