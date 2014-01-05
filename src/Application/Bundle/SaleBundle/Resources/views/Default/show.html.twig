@@ -45,3 +45,9 @@
     </div>
     {{ render(controller('ApplicationSaleBundle:Default:getNavigation', {'id':item.id})) }}
 {% endblock %}
+
+{% block title %}{{ item.metatitle | default(item.title) ~ ' - ' ~ parent() }}{% endblock %}
+
+{% block meta_description %}{% spaceless %}{{ item.metadescription }}{% endspaceless %}{% endblock %}
+
+{% block meta_keywords %}{% spaceless %}{{ item.metakeywords }}{% endspaceless %}{% endblock %}

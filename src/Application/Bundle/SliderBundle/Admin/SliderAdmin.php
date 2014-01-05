@@ -19,13 +19,7 @@ class SliderAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('title')
-            ->add('slides', 'sonata_type_collection', array('by_reference' => true),
-                array(
-                    'edit' => 'inline',
-                    'sortable' => 'pos',
-                    'inline' => 'table',
-                ));
+            ->add('title');
     }
 
     /**
@@ -44,15 +38,5 @@ class SliderAdmin extends Admin
                     'delete' => array(),
                 )
             ));
-    }
-
-    /**
-     * @param \Sonata\AdminBundle\Datagrid\DatagridMapper $datagridMapper
-     *
-     * @return void
-     */
-    protected function configureDatagridFilters(DatagridMapper $datagridMapper)
-    {
-        $datagridMapper->add('title');
     }
 }

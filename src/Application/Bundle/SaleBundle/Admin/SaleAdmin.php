@@ -20,6 +20,7 @@ class saleAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
+            ->with('General')
             ->add('title')
             ->add('fullTitle')
             ->add('shortDescription', 'textarea', array(
@@ -38,7 +39,13 @@ class saleAdmin extends Admin
                 'multiple' => true,
                 'required' => false,
                 'property' => 'title'
-            ));
+            ))
+            ->end()
+            ->with('Metadata')
+            ->add('metatitle', 'text', array('required' => false, 'label' => 'Page title'))
+            ->add('metadescription', 'textarea', array('required' => false, 'label' => 'Description'))
+            ->add('metakeywords', 'textarea', array('required' => false, 'label' => 'Keywords'))
+            ->end();
     }
 
     /**

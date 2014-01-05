@@ -61,6 +61,27 @@ class Sale
     private $companies;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $metatitle;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $metadescription;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $metakeywords;
+
+    /**
      * Constructor
      */
     public function __construct()
@@ -213,6 +234,54 @@ class Sale
     public function getShortDescription()
     {
         return $this->shortDescription;
+    }
+
+    /**
+     * @param string $metadescription
+     */
+    public function setMetadescription($metadescription)
+    {
+        $this->metadescription = $metadescription;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMetadescription()
+    {
+        return $this->metadescription;
+    }
+
+    /**
+     * @param string $metakeywords
+     */
+    public function setMetakeywords($metakeywords)
+    {
+        $this->metakeywords = $metakeywords;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMetakeywords()
+    {
+        return $this->metakeywords;
+    }
+
+    /**
+     * @param string $metatitle
+     */
+    public function setMetatitle($metatitle)
+    {
+        $this->metatitle = $metatitle;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMetatitle()
+    {
+        return $this->metatitle;
     }
 
     /**

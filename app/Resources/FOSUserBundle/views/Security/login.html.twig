@@ -1,0 +1,51 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7 login" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie10 lt-ie9 lt-ie8 login" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie10 lt-ie9 login" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js lt-ie10 ie9 login" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js login" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>{% block title %}Athago bouwbedrijf{% endblock %}</title>
+    {% set _meta_keywords = block('meta_keywords') %}
+    {% set _meta_description = block('meta_description') %}
+    <meta name="keyword" content="{{ _meta_keywords }}">
+    <meta name="description" content="{{ _meta_description }}">
+    {% block stylesheets %}
+        {% stylesheets "css/*"  output="cache/*.css" filter="cssrewrite" %}
+        <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+        {% endstylesheets %}
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<body>
+<div class="container clearfix">
+    <div class="header">
+        <a href="{{ path('homepage') }}" class="logo" title="Athago">Athago</a>
+    </div>
+    <div class="content">
+        {% if error %}
+            <div class="form-error">{{ error|trans }}</div>
+        {% endif %}
+        <form action="{{ path("fos_user_security_check") }}" method="post">
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+            <div class="row">
+                <input type="text" id="username" name="_username" value="{{ last_username }}" placeholder="Username" required="required" />
+            </div>
+            <div class="row">
+                <input type="password" id="password" name="_password" required="required" placeholder="Password" />
+            </div>
+            <div class="row actions">
+                <input type="submit" id="_submit" name="_submit" class="button" value="Login" />
+            </div>
+        </form>
+    </div>
+    <div class="footer">
+        <p>ATHAGO NV | Kwikaard 110 | 2980 Sint-Antonius Zoersel<br>tel. 03-383.07.86 | fax 03-384.08.41<br><a href="mailto:info@athago.be">info@athago.be</a></p>
+        <p class="made-in"><a href="http://www.beeldstudio.be" target="_blank" title="website: BeeldStudio Creatives">website: BeeldStudio Creatives</a></p>
+    </div>
+</div>
+</body>
+</html>
+

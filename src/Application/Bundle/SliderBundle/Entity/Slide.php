@@ -48,6 +48,29 @@ class Slide
     private $content = '';
 
     /**
+     * @var Slider
+     *
+     * @ORM\ManyToOne(targetEntity="Slider", inversedBy="slides")
+     * @ORM\JoinColumn(name="slider_id", referencedColumnName="id")
+     */
+    private $slider;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(type="datetime")
+     */
+    private $updated;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->updated = new \DateTime();
+    }
+
+    /**
      * @param string $content
      */
     public function setContent($content)
@@ -80,7 +103,7 @@ class Slide
     }
 
     /**
-     * @param mixed $image
+     * @param File $image
      */
     public function setImage($image)
     {
@@ -88,7 +111,7 @@ class Slide
     }
 
     /**
-     * @return mixed
+     * @return File
      */
     public function getImage()
     {
@@ -109,5 +132,45 @@ class Slide
     public function getImageName()
     {
         return $this->imageName;
+    }
+
+    /**
+     * @param \Application\Bundle\SliderBundle\Entity\Slider $slider
+     */
+    public function setSlider($slider)
+    {
+        $this->slider = $slider;
+    }
+
+    /**
+     * @return \Application\Bundle\SliderBundle\Entity\Slider
+     */
+    public function getSlider()
+    {
+        return $this->slider;
+    }
+
+    /**
+     * @param \DateTime $updated
+     */
+    public function setUpdated($updated)
+    {
+        $this->updated = $updated;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getUpdated()
+    {
+        return $this->updated;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function __toString()
+    {
+        return $this->getImageName();
     }
 }

@@ -60,6 +60,27 @@ class Page
     private $updated;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $metatitle;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $metadescription;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $metakeywords;
+
+    /**
      * @param boolean $homepage
      */
     public function setHomepage($homepage)
@@ -176,6 +197,54 @@ class Page
     public function getUpdated()
     {
         return $this->updated;
+    }
+
+    /**
+     * @param string $metadescription
+     */
+    public function setMetadescription($metadescription)
+    {
+        $this->metadescription = $metadescription;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMetadescription()
+    {
+        return $this->metadescription;
+    }
+
+    /**
+     * @param string $metakeywords
+     */
+    public function setMetakeywords($metakeywords)
+    {
+        $this->metakeywords = $metakeywords;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMetakeywords()
+    {
+        return $this->metakeywords;
+    }
+
+    /**
+     * @param string $metatitle
+     */
+    public function setMetatitle($metatitle)
+    {
+        $this->metatitle = $metatitle;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMetatitle()
+    {
+        return $this->metatitle;
     }
 
     /**

@@ -74,6 +74,10 @@ sonata_block:
         sonata.admin.block.admin_list:
             contexts:   [admin]
 
+sonata_admin:
+    title:      Athago bouwbedrijf
+    title_logo: images/logo.png
+
 stof_doctrine_extensions:
     default_locale: en_US
     orm:
@@ -101,6 +105,10 @@ liip_imagine:
             quality: 75
             filters:
                 thumbnail: { size: [960, 325], mode: outbound }
+        slide_admin:
+            quality: 60
+            filters:
+                thumbnail: { size: [192, 64], mode: outbound }
         realistate_thumb:
             quality: 75
             filters:

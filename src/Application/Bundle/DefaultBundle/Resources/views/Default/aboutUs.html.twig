@@ -8,3 +8,9 @@
     <h1>{{ page.title|escape }}</h1>
     {{ page.content|raw }}
 {% endblock %}
+
+{% block title %}{{ page.metatitle | default(page.title) ~ ' - ' ~ parent() }}{% endblock %}
+
+{% block meta_description %}{% spaceless %}{{ page.metadescription }}{% endspaceless %}{% endblock %}
+
+{% block meta_keywords %}{% spaceless %}{{ page.metakeywords }}{% endspaceless %}{% endblock %}

@@ -33,11 +33,7 @@ class Slider
 
     /**
      * @var ArrayCollection
-     * @ORM\ManyToMany(targetEntity="Slide", cascade={"persist", "remove"})
-     * @ORM\JoinTable(name="sliders_slides_ref",
-     *      joinColumns={@ORM\JoinColumn(name="slider_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="slide_id", referencedColumnName="id", unique=true)}
-     *      )
+     * @ORM\OneToMany(targetEntity="Slide", mappedBy="slider")
      **/
     private $slides;
 

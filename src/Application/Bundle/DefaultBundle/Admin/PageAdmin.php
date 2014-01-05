@@ -23,13 +23,16 @@ class PageAdmin extends Admin
             ->add('title')
             ->add('slug', null, array('required' => false))
             ->add('homepage', null, array('required' => false))
-            ->add('updated', 'date', array('widget' => 'single_text', 'required' => false))
-            ->add('created', 'date', array('widget' => 'single_text', 'required' => false))
             ->end()
             ->with('Content')
             ->add('content', 'textarea', array(
                 'attr' => array('class' => 'tinymce', 'data-theme' => 'advanced')
             ))
+            ->end()
+            ->with('Metadata')
+            ->add('metatitle', 'text', array('required' => false, 'label' => 'Page title'))
+            ->add('metadescription', 'textarea', array('required' => false, 'label' => 'Description'))
+            ->add('metakeywords', 'textarea', array('required' => false, 'label' => 'Keywords'))
             ->end();
     }
 
@@ -50,15 +53,5 @@ class PageAdmin extends Admin
                     'delete' => array(),
                 )
             ));
-    }
-
-    /**
-     * @param \Sonata\AdminBundle\Datagrid\DatagridMapper $datagridMapper
-     *
-     * @return void
-     */
-    protected function configureDatagridFilters(DatagridMapper $datagridMapper)
-    {
-        $datagridMapper->add('title');
     }
 }

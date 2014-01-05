@@ -12,3 +12,9 @@
 {% block rightside %}
     {{ render(controller('ApplicationSaleBundle:Default:widget')) }}
 {% endblock %}
+
+{% block title %}{{ page.metatitle | default(page.title) ~ ' - ' ~ parent() }}{% endblock %}
+
+{% block meta_description %}{% spaceless %}{{ page.metadescription }}{% endspaceless %}{% endblock %}
+
+{% block meta_keywords %}{% spaceless %}{{ page.metakeywords }}{% endspaceless %}{% endblock %}

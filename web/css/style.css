@@ -89,7 +89,7 @@ h3:before {
 }
 h4 {
     font-family: 'gothambold', arial, sans-serif;
-    font-size: 1em;
+    font-size: 1.25em;
     font-weight: normal;
     margin: 0 0 20px 0;
     letter-spacing: 1px;
@@ -129,11 +129,15 @@ img {
     -webkit-border-radius: 5px;
     border-radius: 5px;
     cursor: pointer;
+    border: 0;
+    margin: 0;
 }
 .button:hover,
-.button:active {
+.button:active,
+.button:link {
     background-color: #ac1d70;
     text-decoration: none;
+    border: 0;
 }
 .container {
     background: #eaecec;
@@ -370,10 +374,15 @@ ul.for-sale li a:hover {
 ul.for-sale li a img {
     display: block;
     margin: 0 auto;
-    border: 4px solid #ffffff;
+    border: 1px solid #ffffff;
+    -webkit-transition: border-color 300ms linear;
+    -moz-transition: border-color 300ms linear;
+    -ms-transition: border-color 300ms linear;
+    -o-transition: border-color 300ms linear;
+    transition: border-color 300ms linear;
 }
 ul.for-sale li a:hover img {
-    border: 4px solid #b52d7c;
+    border: 1px solid #b52d7c;
 }
 .media-gallery .big-img {
     float:left;
@@ -397,7 +406,10 @@ ul.for-sale li a:hover img {
     cursor: pointer;
 }
 .for-sale-description, .companies {
-    padding: 25px;
+    padding: 15px 25px;
+}
+.companies {
+    padding-top: 0;
 }
 .companies-list {
     list-style: none;
@@ -445,4 +457,50 @@ ul.for-sale li a:hover img {
 }
 .footer p.made-in a {
     color: #ced3d4;
+}
+
+.login .container {
+    margin-top:100px;
+    width: 480px;
+}
+.login .header {
+    margin: 0px;
+}
+.login .header .logo {
+    margin: 0 auto;
+    float: none;
+}
+.row {
+    margin-bottom: 15px;
+}
+.login .button {
+    width: 370px;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 auto;
+    display: block;
+}
+.form-error {
+    color:#ff0000;
+    text-align: center;
+    margin: 0 0 15px;
+    font-size: 1.25em;
+    line-height: 1.25em;
+}
+.login .footer {
+    margin: 0 0 20px;
+}
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    display: block;
+    width: 346px;
+    border: 2px solid #212b6f;
+    font-size: 1.5em;
+    line-height: 1.25em;
+    padding:5px 10px;
+    margin: 0 auto;
+    font-family: 'gothambook', arial, sans-serif;
+    color: #b52d7c;
+    border-radius: 5px;
 }
