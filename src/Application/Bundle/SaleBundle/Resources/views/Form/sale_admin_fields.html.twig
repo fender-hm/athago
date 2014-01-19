@@ -136,3 +136,29 @@
         </style>
     {% endspaceless %}
 {% endblock %}
+
+{% block links_widget %}
+    <ul class="links" style="list-style: none; margin: 0;padding: 0;">
+        {% if value | length %}
+            {% for link in value %}
+                <li style="margin-bottom: 10px"><input class="span5" type="text" name="{{ name }}[]" value="{{ link }}" /></li>
+            {% endfor %}
+        {% else %}
+            <li style="margin-bottom: 10px"><input type="text" class="span5" name="{{ name }}[]" /></li>
+        {% endif %}
+    </ul>
+    <button class="add">+</button>
+    <script type="text/javascript">
+        $(document).ready(function()
+        {
+            $('button.add').click(function(e)
+            {
+                e.preventDefault();
+                var $linksContainer = $('ul.links');
+                var $row = $($linksContainer.find('li')[0]).clone();
+                $row.find('input').val('');
+                $linksContainer.append($row);
+            });
+        })
+    </script>
+{% endblock %}

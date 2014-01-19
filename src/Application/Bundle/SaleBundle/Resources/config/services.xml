@@ -32,5 +32,9 @@
         <service id="application.sale.sale_image_preview.type" class="Application\Bundle\SaleBundle\Type\SaleImagePreviewType">
             <tag name="form.type" alias="sale_image_preview" />
         </service>
+
+        <service id="application.sale.links.type" class="Application\Bundle\SaleBundle\Type\LinksType">
+            <tag name="form.type" alias="links" />
+        </service>
     </services>
 </container>

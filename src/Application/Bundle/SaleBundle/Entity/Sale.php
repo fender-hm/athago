@@ -82,12 +82,20 @@ class Sale
     private $metakeywords;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $links;
+
+    /**
      * Constructor
      */
     public function __construct()
     {
         $this->images = new ArrayCollection();
         $this->companies = new ArrayCollection();
+        $this->links = serialize(array());
     }
 
     /**
@@ -290,5 +298,21 @@ class Sale
     public function __toString()
     {
         return $this->getTitle();
+    }
+
+    /**
+     * @param string $links
+     */
+    public function setLinks($links)
+    {
+        $this->links = serialize($links);
+    }
+
+    /**
+     * @return string
+     */
+    public function getLinks()
+    {
+        return unserialize($this->links);
     }
 }

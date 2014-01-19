@@ -40,6 +40,7 @@ class saleAdmin extends Admin
                 'required' => false,
                 'property' => 'title'
             ))
+            ->add('links', 'links', array('required' => false))
             ->end()
             ->with('Metadata')
             ->add('metatitle', 'text', array('required' => false, 'label' => 'Page title'))
@@ -79,6 +80,7 @@ class saleAdmin extends Admin
 
     public function prePersist($sale)
     {
+        $links = $this->getRequest()->get('links');
         $cookies = $this->getRequest()->cookies;
 
         if ($cookies->has('targetTmp')) {
@@ -94,6 +96,12 @@ class saleAdmin extends Admin
             }
         }
 
+    }
+
+    public function preUpdate($sale)
+    {
+        $links = array_filter($this->getRequest()->get('links', array()));
+        $sale->setLinks($links);
     }
 
     public function preRemove($sale)

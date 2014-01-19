@@ -32,11 +32,20 @@
                 {% for company in item.companies %}
                     <li class="clearfix">
                         <div class="company-logo">
-                            <img src="{{ asset('images/sale/companies/' ~ company.logoName ) | imagine_filter('sale_company_logo') }}" alt="">
+                            {% if item.links[loop.index - 1] is defined %}
+                                <a href="{{ item.links[loop.index - 1] }}" target="_blank" title="{{ company.title }}">
+                                    <img src="{{ asset('images/sale/companies/' ~ company.logoName ) | imagine_filter('sale_company_logo') }}" alt="">
+                                </a>
+                            {% else %}
+                                <img src="{{ asset('images/sale/companies/' ~ company.logoName ) | imagine_filter('sale_company_logo') }}" alt="">
+                            {% endif %}
                         </div>
                         <div class="company-address">
                             <p>{{ company.title }}</p>
                             {{ company.description|raw }}
+                            {% if item.links[loop.index - 1] is defined %}
+                                <p><a href="{{ item.links[loop.index -1] }}" target="_blank">{{ item.links[loop.index - 1] }}</a></p>
+                            {% endif %}
                         </div>
                     </li>
                 {% endfor %}
