@@ -5,6 +5,7 @@ namespace Application\Bundle\DefaultBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
@@ -67,5 +68,49 @@ class DefaultController extends Controller
         }
 
         return array('page' => $page);
+    }
+
+    /**
+     * Sitemap action
+     *
+     * @return Response
+     *
+     * @Route("/sitemap.xml", name="sitemap")
+     *
+     */
+    public function sitemapAction()
+    {
+        $host = $this->getRequest()->getHost();
+        $xml = '<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>http://' . $host . '/</loc>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+<url>
+<loc>http://' . $host . '/over-ons</loc>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+<url>
+<loc>http://' . $host . '/realisaties</loc>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+<url>
+<loc>http://' . $host . '/te-koop</loc>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+<url>
+<loc>http://' . $host . '/contact</loc>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+</urlset> ';
+        $response = new Response($xml);
+        $response->headers->add(array('Content-type' => 'text/xml'));
+        return $response;
     }
 }
