@@ -7,6 +7,9 @@ $(document).ready(function () {
         nextEffect		: 'fade',
         helpers		: {
             title	: { type : 'inside' }
+        },
+        afterLoad : function() {
+            this.title = 'Afbeelding ' + (this.index + 1) + ' van ' + this.group.length + (this.title ? ' - ' + this.title : '');
         }
     });
     if ($('#home-slider').length) {

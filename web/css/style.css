@@ -406,7 +406,7 @@ ul.for-sale li a:hover img {
     cursor: pointer;
 }
 .for-sale-description, .companies {
-    padding: 15px 25px;
+    padding: 20px 25px 15px;
 }
 .companies {
     padding-top: 0;
