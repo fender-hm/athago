@@ -100,7 +100,10 @@ class saleAdmin extends Admin
 
     public function preUpdate($sale)
     {
-        $links = array_filter($this->getRequest()->get('links', array()));
+        $links = $this->getRequest()->get('links', array());
+
+        $links['link'] = array_filter($links['link']);
+        $links['title'] = array_filter($links['title']);
         $sale->setLinks($links);
     }
 

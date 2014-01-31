@@ -34,7 +34,7 @@ $(document).ready(function () {
                     return '<li>' + (index + 1) + '</li>';
                 }
             });
-        homeSlider.on('active', function (eventName, index) {
+        homeSlider.on('activePage', function (eventName, index) {
                 $homeSliderTexts.fadeOut(800);
                 $($homeSliderTexts[index]).fadeIn(1000);
             }

@@ -140,11 +140,17 @@
 {% block links_widget %}
     <ul class="links" style="list-style: none; margin: 0;padding: 0;">
         {% if value | length %}
-            {% for link in value %}
-                <li style="margin-bottom: 10px"><input class="span5" type="text" name="{{ name }}[]" value="{{ link }}" /></li>
+            {% for link in value['link'] %}
+                <li style="margin-bottom: 10px">
+                    <input class="span5" type="text" name="{{ name }}[title][]" placeholder="Title" value="{{ value['title'][loop.index - 1] | default(link) }}" />
+                    <input class="span5" type="text" name="{{ name }}[link][]"  placeholder="Url" value="{{ link | default('') }}" />
+                </li>
             {% endfor %}
         {% else %}
-            <li style="margin-bottom: 10px"><input type="text" class="span5" name="{{ name }}[]" /></li>
+            <li style="margin-bottom: 10px">
+                <input class="span5" type="text" name="{{ name }}[title][]"  placeholder="Title" />
+                <input class="span5" type="text" name="{{ name }}[link][]" placeholder="Url" />
+            </li>
         {% endif %}
     </ul>
     <button class="add">+</button>

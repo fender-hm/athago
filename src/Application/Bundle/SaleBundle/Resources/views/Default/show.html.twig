@@ -43,8 +43,8 @@
                         <div class="company-address">
                             <p>{{ company.title }}</p>
                             {{ company.description|raw }}
-                            {% if item.links[loop.index - 1] is defined %}
-                                <p><a href="{{ item.links[loop.index -1] }}" target="_blank">{{ item.links[loop.index - 1] }}</a></p>
+                            {% if item.links['link'][loop.index - 1] is defined %}
+                                <p><a href="{{ item.links['link'][loop.index -1] }}" target="_blank">{{ item.links['title'][loop.index - 1] | default(item.links['link'][loop.index -1]) }}</a></p>
                             {% endif %}
                         </div>
                     </li>

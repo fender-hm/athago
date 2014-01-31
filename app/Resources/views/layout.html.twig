@@ -6,7 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
     <head>
         <meta charset="UTF-8" />
-        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <meta content="width=device-width, user-scalable=no" name="viewport">
         <title>{% block title %}Athago algemeen bouwbedrijf{% endblock %}</title>
         {% set _meta_keywords = block('meta_keywords') %}
         {% set _meta_description = block('meta_description') %}
@@ -18,6 +18,7 @@
             {% endstylesheets %}
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <script type="text/javascript" src="{{ asset('js/modernizr.custom.80817.js') }}"></script>
     </head>
     <body>
         <div class="container clearfix">
