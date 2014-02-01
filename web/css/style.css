@@ -317,7 +317,7 @@ img {
     width: 169px;
     height:102px;
 }
-.media-list li:nth-child(even) {
+.media-list li.right-item {
     margin-right: 0;
 }
 .media-list li a {
@@ -336,9 +336,9 @@ img {
 }
 .hover-block span {
     position: relative;;
-    top: 45%;
+    top: 40%;
     display: block;
-    padding-top: 20px;
+    padding-top: 35px;
     background:  url("../images/camera-icon.png") 50% 0 no-repeat;
 }
 .lt-ie9 .hover-block {
