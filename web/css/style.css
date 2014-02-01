@@ -336,10 +336,10 @@ img {
 }
 .hover-block span {
     position: relative;;
-    top: 65%;
+    top: 45%;
     display: block;
     padding-top: 20px;
-    background:  url("../images/camera-icon.png") 0 45% no-repeat;
+    background:  url("../images/camera-icon.png") 50% 0 no-repeat;
 }
 .lt-ie9 .hover-block {
     background: url("../images/pink.png") 0 0 repeat;
