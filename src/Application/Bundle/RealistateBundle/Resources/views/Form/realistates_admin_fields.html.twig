@@ -6,7 +6,7 @@
         <div class="uploaded-images">
             {% if subject.id and subject.images %}
                 {% for image in subject.images %}
-                    <div class="image">
+                    <div class="image" id="image-{{ image.id }}">
                         <img src="{{ asset('images/realistate/' ~ image.imageName) | imagine_filter('realistate_admin_thumb') }}" />
                         <span class="remove" data-id="{{ image.id }}">Remove</span>
                     </div>
@@ -19,10 +19,22 @@
         <script type="text/javascript">
             $(document).ready(function()
             {
+                $('.uploaded-images').sortable({
+                    items: ">.image",
+                    update: function( event, ui ) {
+                        $.ajax({
+                            url: '{{ path('sonata_admin_realistate_images_order') }}',
+                            data: $(this).sortable('serialize'),
+                            method: 'get',
+                            async: false
+                        });
+                    }
+                });
                 var uploader = new qq.FileUploaderBasic({
                     action: '{{ path('sonata_admin_realistate_upload') }}',
                     params: {
-                        id: $('#edited-item').val()
+                        id: $('#edited-item').val(),
+                        order: $('.uploaded-images > .image').length
                     },
                     button: $('a.uploader')[0],
                     forceMultipart: true,
@@ -31,7 +43,7 @@
                     acceptFiles: 'image/jpeg,image/png',
                     sizeLimit: 6 * 1024 * 1024,
                     onComplete: function (id, fileName, responseJSON) {
-                        $('.uploaded-images').append($('<div class="image"><img src="' + responseJSON.thumb + '" /><span class="remove" data-id="' + responseJSON.id + '">Remove</span></div>'));
+                        $('.uploaded-images').append($('<div class="image" id="image-' + responseJSON.id + '"><img src="' + responseJSON.thumb + '" /><span class="remove" data-id="' + responseJSON.id + '">Remove</span></div>'));
                     },
                     onUpload: function (id, fileName) {
 

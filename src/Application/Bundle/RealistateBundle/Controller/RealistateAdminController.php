@@ -4,7 +4,7 @@ namespace Application\Bundle\RealistateBundle\Controller;
 use Application\Bundle\RealistateBundle\Entity\Realistate;
 use Application\Bundle\RealistateBundle\Entity\RealistateImage;
 use Sonata\AdminBundle\Controller\CRUDController as Controller;
-use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class RealistateAdminController extends Controller
@@ -17,6 +17,7 @@ class RealistateAdminController extends Controller
         $realistateImage = new RealistateImage();
         $realistateImage->setImage($file);
         $realistateImage->setImageName($file->getFilename());
+        $realistateImage->setOrdering($this->getRequest()->get('order',0));
         if ($realistate) {
             $realistate->addImage($realistateImage);
         } else {
@@ -42,6 +43,21 @@ class RealistateAdminController extends Controller
         $em->flush();
 
         return $this->renderJson(array('status' => true));
+    }
+
+    public function orderImagesAction()
+    {
+        $orders = $this->getRequest()->get('image', array());
+        $repository = $this->getDoctrine()->getRepository('ApplicationRealistateBundle:RealistateImage');
+        $items = $repository->findByIds($orders);
+        foreach ($items as $item) {
+            if ($order = array_search($item->getId(), $orders)) {
+                $item->setOrdering($order);
+            }
+        }
+        $this->getDoctrine()->getManager()->flush();
+
+        return new Response();
     }
 
     private function getUploadedFile()

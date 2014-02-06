@@ -132,10 +132,8 @@ img {
     border: 0;
     margin: 0;
 }
-.button:hover,
-.button:active,
-.button:link {
-    background-color: #ac1d70;
+.button:hover {
+    background-color: #8d1b59;
     text-decoration: none;
     border: 0;
 }
@@ -372,6 +370,7 @@ ul.for-sale li {
     width: 290px;
     overflow: hidden;
     margin: 12px;
+    height: 260px;
 }
 ul.for-sale li a {
     font-size: 1.25em;

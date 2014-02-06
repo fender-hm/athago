@@ -10,7 +10,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 /**
  * Realistate image entity
  *
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Application\Bundle\RealistateBundle\Repository\RealistateImageRepository")
  * @ORM\Table(name="realistate_image")
  * @ORM\HasLifecycleCallbacks
  */
@@ -54,6 +54,18 @@ class RealistateImage
      * @ORM\Column(type="string", length=255, name="tmp", nullable=true)
      */
     private $tmp;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(type="integer")
+     */
+    private $ordering;
+
+    public function __construct()
+    {
+        $this->ordering = 0;
+    }
 
     /**
      * @param mixed $id
@@ -159,5 +171,21 @@ class RealistateImage
     public function getRealistate()
     {
         return $this->realistate;
+    }
+
+    /**
+     * @param int $ordering
+     */
+    public function setOrdering($ordering)
+    {
+        $this->ordering = $ordering;
+    }
+
+    /**
+     * @return int
+     */
+    public function getOrdering()
+    {
+        return $this->ordering;
     }
 }

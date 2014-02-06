@@ -23,6 +23,7 @@ class Realistate
     /**
      * @var ArrayCollection
      * @ORM\OneToMany(targetEntity="RealistateImage", mappedBy="realistate", cascade={"remove"})
+     * @ORM\OrderBy({"ordering" = "ASC"})
      */
     private $images;
 

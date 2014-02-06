@@ -71,9 +71,10 @@
         </div>
         {% block javascripts %}
             {% javascripts "js/jquery-1.8.3.min.js"
-            "js/sly.min.js"
-            "js/jquery.fancybox.pack.js"
-            "js/scripts.js"
+                "js/jquery-ui.min.js"
+                "js/sly.min.js"
+                "js/jquery.fancybox.pack.js"
+                "js/scripts.js"
             output="cache/*.js" %}
             <script src="{{ asset_url }}"></script>
             {% endjavascripts %}

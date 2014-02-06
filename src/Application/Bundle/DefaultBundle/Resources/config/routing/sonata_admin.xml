@@ -46,6 +46,11 @@
         <default key="_sonata_admin">application.realistate.realistate.admin</default>
     </route>
 
+    <route id="sonata_admin_realistate_images_order" pattern="/realistate/images/reorder">
+        <default key="_controller">ApplicationRealistateBundle:RealistateAdmin:orderImages</default>
+        <default key="_sonata_admin">application.realistate.realistate.admin</default>
+    </route>
+
     <route id="sonata_admin_sale_logo_upload" pattern="/sale/logo/upload">
         <default key="_controller">ApplicationSaleBundle:SaleAdmin:uploadLogo</default>
         <default key="_sonata_admin">application.sale.sale_company.admin</default>
