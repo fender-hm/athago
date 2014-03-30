@@ -130,7 +130,7 @@ class RealistateImage
      */
     public function postEvents()
     {
-        $this->getImage()->move(__DIR__.'/../../../../../web/images/realistate/', $this->getImageName());
+        $this->getImage()->move(__DIR__.'/../../../../../../www/images/realistate/', $this->getImageName());
     }
 
     /**
@@ -138,7 +138,7 @@ class RealistateImage
      */
     public function preRemove()
     {
-        unlink(__DIR__.'/../../../../../web/images/realistate/' . $this->getImageName());
+        unlink(__DIR__.'/../../../../../../www/images/realistate/' . $this->getImageName());
     }
 
     /**

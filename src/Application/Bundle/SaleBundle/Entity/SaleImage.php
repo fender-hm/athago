@@ -117,7 +117,7 @@ class SaleImage
      */
     public function postEvents()
     {
-        $this->getImage()->move(__DIR__.'/../../../../../web/images/sale/', $this->getImageName());
+        $this->getImage()->move(__DIR__.'/../../../../../../www/images/sale/', $this->getImageName());
     }
 
     /**
@@ -125,7 +125,7 @@ class SaleImage
      */
     public function preRemove()
     {
-        unlink(__DIR__.'/../../../../../web/images/sale/' . $this->getImageName());
+        unlink(__DIR__.'/../../../../../../www/images/sale/' . $this->getImageName());
     }
 
     /**
