@@ -26,7 +26,7 @@ $(document).ready(function () {
                 speed: 1000,
                 clickBar: 1,
                 cycleBy: 'items',
-                cycleInterval: 5000,
+                cycleInterval: 3000,
                 pauseOnHover: 1,
                 pagesBar: '#home-slider-paging',
                 activatePageOn: 'click',
@@ -35,8 +35,8 @@ $(document).ready(function () {
                 }
             });
         homeSlider.on('activePage', function (eventName, index) {
-                $homeSliderTexts.fadeOut(800);
-                $($homeSliderTexts[index]).fadeIn(1000);
+                $homeSliderTexts.fadeOut(500);
+                $($homeSliderTexts[index]).fadeIn(500);
             }
         );
         homeSlider.init();
