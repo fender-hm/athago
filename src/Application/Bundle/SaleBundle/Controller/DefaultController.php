@@ -30,7 +30,7 @@ class DefaultController extends Controller
      *
      * @return array
      *
-     * @Route("/te-koop/{id}", name="sale_show")
+     * @Route("/te-koop/{slug}", name="sale_show")
      * @Template()
      */
     public function showAction(Sale $sale)

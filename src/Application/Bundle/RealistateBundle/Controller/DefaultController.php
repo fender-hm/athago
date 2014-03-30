@@ -9,14 +9,14 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/realisaties", name="realistate")
+     * @Route("/realisatie", name="realistate")
      * @Template()
      */
     public function indexAction()
     {
         $repository = $this->getDoctrine()->getRepository('ApplicationRealistateBundle:Realistate');
 
-        $realistates = $repository->findAll();
+        $realistates = $repository->findBy(array(), array('id' => 'DESC'));
 
         return array('realistates' => $realistates);
     }

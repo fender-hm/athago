@@ -13,7 +13,7 @@ class SaleAdminController extends Controller
 {
     public function uploadLogoAction()
     {
-        $uploadPath = $this->container->getParameter('kernel.root_dir') . '/../web/images/sale/companies/';
+        $uploadPath = $this->container->getParameter('kernel.root_dir') . '/../../www/images/sale/companies/';
         $session = $this->get('session');
         if ($session->has('companyLogo')) {
             unlink($uploadPath . $session->get('companyLogo'));

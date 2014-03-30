@@ -2,7 +2,7 @@
 <ul class="media-list clearfix">
     {% for item in items %}
     <li {{ (loop.index + 1) % 2?'class="right-item"':'' }}>
-        <a href="{{ url('sale_show', {'id':item.id}) }}" class="hover-effect" data-hover-text="Meer informatie">
+        <a href="{{ url('sale_show', {'slug':item.slug}) }}" class="hover-effect" data-hover-text="Meer informatie">
             <img src="{{ asset('images/sale/' ~ item.images.first.imageName ) | imagine_filter('sale_small_img') }}" alt="">
         </a>
     </li>

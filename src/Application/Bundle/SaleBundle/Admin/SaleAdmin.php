@@ -22,6 +22,7 @@ class saleAdmin extends Admin
         $formMapper
             ->with('General')
             ->add('title')
+            ->add('slug', null, array('required' => false))
             ->add('fullTitle')
             ->add('shortDescription', 'textarea', array(
                 'required' => false
@@ -80,7 +81,7 @@ class saleAdmin extends Admin
 
     public function prePersist($sale)
     {
-        $links = $this->getRequest()->get('links');
+        $this->preUpdate($sale);
         $cookies = $this->getRequest()->cookies;
 
         if ($cookies->has('targetTmp')) {

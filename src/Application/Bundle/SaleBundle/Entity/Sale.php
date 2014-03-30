@@ -4,6 +4,7 @@ namespace Application\Bundle\SaleBundle\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * Sale entity
@@ -31,6 +32,13 @@ class Sale
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $title;
+
+    /**
+     * @var string
+     * @Gedmo\Slug(fields={"title"})
+     * @ORM\Column(length=128, unique=true)
+     */
+    private $slug;
 
     /**
      * @var string
@@ -95,7 +103,12 @@ class Sale
     {
         $this->images = new ArrayCollection();
         $this->companies = new ArrayCollection();
-        $this->links = serialize(array());
+        $this->links = serialize(
+            array(
+                'link' => array(),
+                'title' => array()
+            )
+        );
     }
 
     /**
@@ -314,5 +327,21 @@ class Sale
     public function getLinks()
     {
         return unserialize($this->links);
+    }
+
+    /**
+     * @param string $slug
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 }

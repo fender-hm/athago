@@ -137,7 +137,7 @@ class SaleCompany
      */
     public function preRemove()
     {
-        unlink(__DIR__.'/../../../../../web/images/sale/companies/' . $this->getLogoName());
+        unlink(__DIR__.'/../../../../../../www/images/sale/companies/' . $this->getLogoName());
     }
 
     /**
